@@ -1,0 +1,140 @@
+body{
+    background-color:rgb(34,34,34);
+    color: white;
+    font-family: poppinsregular;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+#title {
+    flex-direction: column;
+    line-height: 10px;
+}
+li{
+    display: inline-block;
+    margin: 20px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(132, 14, 121);
+    transition: 0.3s all;
+}
+h1{
+    font-weight: 200;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+h2{
+    font-size: 52px;
+    line-height: 10px;
+    font-family: poppinsmedium;
+}
+span{
+    color: rgb(132, 14, 121);
+}
+p{
+    line-height: 20px;
+    
+    font-family: poppinslight;
+}
+#active-blog{
+    border: 2px solid rgb(132, 14, 121);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+div img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+#banner{
+    background-color: green;
+}
+#banner,footer{
+    justify-content: center;
+}
+
+/*tamanho das sesoes*/
+#hero{
+    justify-content: space-around;
+    align-items: center;
+    height: 70vh;
+    border-bottom: 4px solid #FFF;
+}
+#tecnologias{
+    height: 30vh;
+}
+
+#curriculo{
+    height: 50vh;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+#baixar{
+    width: 20%;
+    
+}
+#baixar p{
+    border:2px solid rgb(132, 14, 121) ;
+    border-radius: 20px;
+}
+#contato{
+    height: vh;
+    margin-bottom: 20px;
+
+}
+footer{
+    background-color: rgb(15, 15, 15);
+}
+
+#tecnologias, #contato{
+    justify-content: space-around;
+}
+.tecnologia-item{
+    width: 25%;
+    padding: 5px;
+    margin: 0 10px;
+    border-left:2px solid #FFF;
+}
+.sobremin{
+    border-bottom: 4px solid #FFF;
+    border-right: 2px solid #FFF;
+    margin-top: 2em;
+    font-weight: bold;
+}
+.cott-item{
+    padding: 10px;
+    border-left: 2px solid white;
+}
+.nome{
+    font-size: 2em;
+    font-weight: bolder;
+}
