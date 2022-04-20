@@ -1,36 +1,32 @@
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 692px) {
     header{
         flex-direction: column;
     }
-    main{
+    #hero{
         flex-direction: column;
-    }
-    form{
-        margin: 0 auto;
-        
     }
     h2{
         font-size: 30px;
     }
-    input{
-        align-self: center;
-        width: 100%;
-    }
-    aside{
-        text-align: center;
-    }
-    img{
-        padding-top: 4em ;
-        width: 100%;
-    }
+ 
     ul{
         text-align: center;
     }
     p{
         margin: 0 auto;
     }
-}
+    #tecnologias{
+        flex-direction: column;
+        height: 10%;
+
+    }
+    .tecnologia-item{
+        text-align: center;
+        width: 90%;
+        border-bottom: 2px solid #FFF;
+    }
+}   
 @media screen and (max-width: 1087px) {
     h2{
         font-size: 30px;
