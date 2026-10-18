@@ -1,0 +1,133 @@
+{
+  "seo": {
+    "title": "Gaspar — presença digital para negócios locais",
+    "description": "Sites de alta conversão e presença no Google que fazem o cliente da sua cidade te encontrar primeiro — e te chamar no WhatsApp. Diagnóstico gratuito."
+  },
+  "hero": {
+    "eyebrow": "Presença digital para negócios locais",
+    "title1": "Ser bom não basta.",
+    "title2": "Você precisa aparecer.",
+    "sub": "Criamos o site e a presença no Google que fazem o cliente da sua cidade te encontrar primeiro — e te chamar no WhatsApp. Sem enrolação.",
+    "cta": "Pedir análise grátis no WhatsApp",
+    "ctaSecondary": "Como funciona",
+    "headerCta": "Pedir análise grátis"
+  },
+  "stats": [
+    { "value": "R$0", "label": "o diagnóstico inicial" },
+    { "value": "1 dia", "label": "pra receber a resposta" },
+    { "value": "0", "label": "compromisso para começar" }
+  ],
+  "marquee": ["Resposta em até 1 dia útil", "Você fala direto comigo", "Escopo e preço por escrito"],
+  "problem": {
+    "eyebrow": "A dura realidade",
+    "title1": "O cliente procurou.",
+    "title2": "Achou o concorrente.",
+    "items": [
+      {
+        "title": "Invisível na busca",
+        "body": "Sem site e sem Google, quem procura acha o concorrente. Às vezes pior que você — só que aparece primeiro."
+      },
+      {
+        "title": "Site que não vende",
+        "body": "Site bonito que não gera contato é enfeite. O que paga as contas é o visitante chamar no WhatsApp."
+      },
+      {
+        "title": "Presença sem direção",
+        "body": "Postar todo dia sem estratégia cansa e não paga boleto. Presença digital é ser encontrado — e escolhido."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "O que a Gaspar faz",
+    "title1": "Tudo que sua empresa",
+    "title2": "precisa para crescer.",
+    "featuredTag": "Mais procurado",
+    "items": [
+      {
+        "num": "01",
+        "title": "Sites que convertem",
+        "body": "Página rápida, clara e feita para uma ação só: o cliente te chamar. Design, texto e estrutura com propósito de venda."
+      },
+      {
+        "num": "02",
+        "title": "Presença no Google",
+        "body": "Apareça na busca e no Maps quando procurarem o que você faz — na sua cidade."
+      },
+      {
+        "num": "03",
+        "title": "Tráfego & autoridade",
+        "body": "Anúncios e conteúdo para atrair quem já está procurando comprar."
+      },
+      {
+        "num": "04",
+        "title": "Marca & conteúdo",
+        "body": "Identidade que faz seu negócio parecer tão bom quanto é."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Como funciona",
+    "title": "Do diagnóstico ao crescimento.",
+    "steps": [
+      { "num": "01", "title": "Diagnóstico", "body": "Mapeio sua presença atual e descubro onde você perde clientes. Grátis." },
+      { "num": "02", "title": "Site & estrutura", "body": "Construo a base que transforma visita em contato." },
+      { "num": "03", "title": "Presença", "body": "Coloco seu negócio onde o cliente procura: Google, Maps e redes." },
+      { "num": "04", "title": "Crescimento", "body": "Medimos, ajustamos e escalamos o que funciona." }
+    ]
+  },
+  "trust": {
+    "eyebrow": "Sem enrolação",
+    "title": "Você fala direto comigo.",
+    "body": "Sem gerente de conta, sem equipe no meio, sem robô: quem atende no WhatsApp e quem desenha o seu site sou eu.",
+    "items": [
+      "Escopo, prazo e preço fechados por escrito antes de começar",
+      "O diagnóstico é grátis e fica seu — mesmo que a gente não trabalhe junto",
+      "Resposta em até 1 dia útil, direto no seu WhatsApp"
+    ]
+  },
+  "faq": {
+    "eyebrow": "Perguntas rápidas",
+    "title": "Antes de chamar no WhatsApp.",
+    "items": [
+      {
+        "q": "Quanto custa um site?",
+        "a": "Depende do escopo. O diagnóstico é grátis, e você recebe preço, prazo e entregas fechados por escrito — sem surpresa no meio do caminho."
+      },
+      {
+        "q": "Já tenho um site. Vale a pena rever?",
+        "a": "Na maioria dos casos, sim: a análise gratuita mostra onde seu site hoje está deixando clientes irem para o concorrente."
+      },
+      {
+        "q": "Em quanto tempo fica pronto?",
+        "a": "Um site de negócio local costuma ficar pronto em 2 a 4 semanas. O prazo exato vem fechado no orçamento."
+      },
+      {
+        "q": "Você atende a minha cidade?",
+        "a": "Sim: todo o acompanhamento é feito pelo WhatsApp, onde você estiver — e o diagnóstico inicial é totalmente remoto."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Peça a análise gratuita da sua presença digital.",
+    "sub": "Resposta em até 1 dia útil, direto no seu WhatsApp. Sem compromisso, sem enrolação.",
+    "button": "Falar no WhatsApp agora",
+    "micro": "ou preencha o formulário ao lado ›",
+    "stickyBar": "Falar no WhatsApp agora",
+    "form": {
+      "title": "Solicite sua análise",
+      "name": "Nome",
+      "whatsapp": "WhatsApp",
+      "business": "Seu negócio",
+      "namePlaceholder": "Como te chamamos",
+      "whatsappPlaceholder": "(15) 99999-9999",
+      "businessPlaceholder": "Ex.: padaria, clínica, oficina",
+      "submit": "Solicitar análise grátis",
+      "success": "Recebido! Resposta em até 1 dia útil, direto no seu WhatsApp.",
+      "privacy": "Seus dados só servem para eu te responder. Nada de spam."
+    }
+  },
+  "footer": {
+    "left": "GASPAR · presença digital",
+    "right": "© {year} GASPAR"
+  }
+}
