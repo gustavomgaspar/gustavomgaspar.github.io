@@ -1,0 +1,24 @@
+# Git
+.git
+.gitignore
+
+# Build local
+target/
+node_modules/
+dist/
+
+# Documentação e processo (não entram na imagem)
+*.md
+agents.md
+docs/
+
+# Revisão Impeccable
+.impeccable/
+
+# Ambiente
+.env
+.env.*
+!.env.example
+
+# Esystem
+.DS_Store

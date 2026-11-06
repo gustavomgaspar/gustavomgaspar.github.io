@@ -1,0 +1,612 @@
+/* ============================================================
+   Gaspar — landing de modernização digital
+   Direção: "desk executivo" — papel claro, tinta escura, um
+   acento indigo, e um único momento de alto contraste: o painel
+   de métricas escuro. Sem gradientes decorativos, sem imagens
+   inventadas. Tipografia fluida com clamp().
+   ============================================================ */
+
+:root {
+  /* Cores (OKLCH) */
+  --paper: oklch(0.977 0.004 262);
+  --paper-2: oklch(0.945 0.007 262);
+  --ink: oklch(0.22 0.022 262);
+  --ink-soft: oklch(0.42 0.02 262);
+  --line: oklch(0.875 0.012 262);
+  --accent: oklch(0.55 0.185 262);
+  --accent-strong: oklch(0.47 0.185 262);
+  --accent-fg: oklch(0.99 0.005 85);
+  --panel-bg: oklch(0.155 0.02 262);
+  --panel-line: oklch(0.32 0.025 262);
+  --panel-fg: oklch(0.955 0.008 85);
+  --panel-fg-soft: oklch(0.72 0.02 262);
+  --wa: oklch(0.66 0.155 155);
+
+  /* Tipografia */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --step--1: clamp(0.84rem, 0.8rem + 0.2vw, 0.92rem);
+  --step-0: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --step-1: clamp(1.25rem, 1.1rem + 0.7vw, 1.55rem);
+  --step-2: clamp(1.7rem, 1.4rem + 1.5vw, 2.4rem);
+  --step-3: clamp(2.3rem, 1.7rem + 3vw, 3.9rem);
+
+  /* Espaço e forma */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --container: 68rem;
+  --gutter: clamp(1.1rem, 0.6rem + 2.5vw, 2.2rem);
+  --space-section: clamp(4rem, 2.5rem + 7vw, 7.5rem);
+  --shadow-card: 0 1px 2px oklch(0.22 0.022 262 / 0.06), 0 10px 28px oklch(0.22 0.022 262 / 0.08);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- Reset enxuto ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---------- Utilidades ---------- */
+.container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: -100%;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  top: 0.75rem;
+}
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.78rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-weight: 650;
+  font-size: var(--step--1);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.18s var(--ease),
+    border-color 0.18s var(--ease),
+    transform 0.18s var(--ease);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+.btn--primary:hover {
+  background: var(--accent-strong);
+}
+
+.btn--ghost {
+  border-color: var(--line);
+  color: var(--ink);
+  background: transparent;
+}
+
+.btn--ghost:hover {
+  border-color: var(--ink-soft);
+  background: var(--paper-2);
+}
+
+.btn--lg {
+  padding: 1rem 2rem;
+  font-size: var(--step-0);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* ---------- Header ---------- */
+.header {
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in oklab, var(--paper) 92%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.9rem;
+}
+
+.header__brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  font-size: var(--step-1);
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.header__tagline {
+  font-size: var(--step--1);
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 560px) {
+  .header__tagline {
+    display: none;
+  }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding-block: clamp(4.5rem, 3rem + 8vw, 8.5rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.hero__inner {
+  max-width: 52rem;
+}
+
+.hero__kicker {
+  font-size: var(--step--1);
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  color: var(--accent-strong);
+  margin-bottom: 1.4rem;
+}
+
+.hero__title {
+  font-size: var(--step-3);
+  line-height: 1.08;
+  font-weight: 780;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  margin-bottom: 1.5rem;
+}
+
+.hero__lede {
+  font-size: var(--step-1);
+  line-height: 1.4;
+  font-weight: 600;
+  max-width: 42rem;
+  margin-bottom: 1rem;
+}
+
+.hero__sub {
+  color: var(--ink-soft);
+  max-width: 44rem;
+  margin-bottom: 2.4rem;
+}
+
+/* ---------- Seções ---------- */
+.section {
+  padding-block: var(--space-section);
+}
+
+.section--alt {
+  background: var(--paper-2);
+  border-block: 1px solid var(--line);
+}
+
+.section__kicker {
+  font-size: var(--step--1);
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  color: var(--accent-strong);
+  margin-bottom: 0.8rem;
+}
+
+.section__title {
+  font-size: var(--step-2);
+  line-height: 1.15;
+  font-weight: 740;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  max-width: 34rem;
+  margin-bottom: clamp(1.8rem, 1.4rem + 2vw, 3rem);
+}
+
+.section__note {
+  color: var(--ink-soft);
+  max-width: 40rem;
+  margin-bottom: 2rem;
+}
+
+/* ---------- Cards de gargalos ---------- */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+}
+
+@media (max-width: 860px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.4rem;
+  box-shadow: var(--shadow-card);
+}
+
+.card__title {
+  font-size: var(--step-0);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.6rem;
+}
+
+.card__body {
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+}
+
+/* ---------- Oferta ---------- */
+.offer__list {
+  display: grid;
+  gap: 0;
+  counter-reset: offer;
+  border-top: 1px solid var(--line);
+}
+
+.offer__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.4rem;
+  align-items: start;
+  padding-block: 1.6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.offer__num {
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  font-weight: 600;
+  color: var(--accent-strong);
+  line-height: 1;
+  padding-top: 0.15rem;
+}
+
+.offer__name {
+  font-size: var(--step-1);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.45rem;
+}
+
+.offer__body {
+  color: var(--ink-soft);
+  max-width: 44rem;
+}
+
+/* ---------- Painel de métricas (demo) ---------- */
+.panel {
+  background: var(--panel-bg);
+  color: var(--panel-fg);
+  border-radius: var(--radius);
+  padding: clamp(1.4rem, 1rem + 2vw, 2.2rem);
+  box-shadow: 0 12px 28px oklch(0.15 0.02 262 / 0.22);
+}
+
+.panel__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.chip {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--panel-line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--panel-fg-soft);
+  font: inherit;
+  font-size: var(--step--1);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.15s var(--ease),
+    color 0.15s var(--ease),
+    border-color 0.15s var(--ease);
+}
+
+.chip:hover {
+  color: var(--panel-fg);
+  border-color: var(--panel-fg-soft);
+}
+
+.chip.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-fg);
+}
+
+.panel__summary {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--panel-fg-soft);
+  margin-bottom: 1.4rem;
+}
+
+.panel__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1.8rem;
+}
+
+@media (max-width: 900px) {
+  .panel__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .panel__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metric {
+  border: 1px solid var(--panel-line);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.1rem;
+  min-height: 6.4rem;
+}
+
+.metric__label {
+  display: block;
+  font-size: var(--step--1);
+  color: var(--panel-fg-soft);
+  margin-bottom: 0.4rem;
+}
+
+.metric__value {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.metric__delta {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: var(--step--1);
+  color: var(--wa);
+  font-weight: 600;
+}
+
+.panel__chart {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+}
+
+.panel__bar {
+  fill: var(--wa);
+}
+
+.panel__bar-label {
+  fill: var(--panel-fg-soft);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ---------- Por que o Gaspar ---------- */
+.lead {
+  font-size: var(--step-1);
+  line-height: 1.45;
+  font-weight: 600;
+  max-width: 44rem;
+  margin-bottom: 1.1rem;
+}
+
+.lead--muted {
+  color: var(--ink-soft);
+  font-size: var(--step-0);
+  font-weight: 400;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.8rem;
+}
+
+.pill {
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: var(--step--1);
+  font-weight: 650;
+  background: var(--paper);
+}
+
+/* ---------- CTA final ---------- */
+.cta {
+  background: var(--paper-2);
+}
+
+.cta__inner {
+  max-width: 44rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--shadow-card);
+  padding: clamp(1.8rem, 1.2rem + 2.5vw, 3rem);
+}
+
+.cta__body {
+  color: var(--ink-soft);
+  margin-bottom: 1.4rem;
+}
+
+.cta__checks {
+  display: grid;
+  gap: 0.55rem;
+  margin-bottom: 2rem;
+}
+
+.cta__checks li {
+  padding-left: 1.6rem;
+  position: relative;
+  font-weight: 600;
+}
+
+.cta__checks li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.32rem;
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 3px;
+  background: var(--accent);
+  color: var(--accent-fg);
+  font-size: 0.62rem;
+  line-height: 0.95rem;
+  text-align: center;
+}
+
+.cta__note {
+  margin-top: 1rem;
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 1px solid var(--line);
+  padding-block: 2.2rem;
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem 1.6rem;
+}
+
+.footer__brand {
+  font-weight: 750;
+  font-size: var(--step-1);
+  letter-spacing: -0.02em;
+}
+
+.footer__line {
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+}
+
+.footer__link {
+  margin-left: auto;
+  font-size: var(--step--1);
+  font-weight: 650;
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 560px) {
+  .footer__link {
+    margin-left: 0;
+  }
+}
+
+/* ---------- Movimento ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
