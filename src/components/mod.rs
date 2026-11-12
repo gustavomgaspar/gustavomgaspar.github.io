@@ -1,9 +1,0 @@
-pub mod diagnosis_cta;
-pub mod footer;
-pub mod header;
-pub mod hero;
-pub mod metrics_demo;
-pub mod offer;
-pub mod page;
-pub mod pain_points;
-pub mod why_gaspar;

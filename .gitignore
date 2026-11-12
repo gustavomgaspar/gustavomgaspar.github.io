@@ -1,10 +1,6 @@
-node_modules/
-dist/
-site/dist/
-/target/
 *.log
 .DS_Store
-styles.css
 .env
-.cargo-leptos/
+
+# Ferramentas do agente (29 MB de skills, não versionadas)
 .agents/

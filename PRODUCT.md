@@ -8,15 +8,15 @@ web
 
 ## Stack
 
-Leptos SSR + Axum + cargo-leptos, escolhidos pelo usuário.
+HTML, CSS e JavaScript estáticos, sem build e sem dependências. Escolhidos pelo usuário.
 
-Deploy: Railway, usando Dockerfile no root.
+Sem etapa de build: `index.html`, `site.css` e `site.js` são servidos como estão. Todo o
+conteúdo comercial já existe no HTML inicial.
 
-Runtime: servidor Rust stateless em `0.0.0.0`, porta via variável `PORT`; fallback local `3000`.
+Deploy: **decisão em aberto** — o alvo de deploy (hospedagem estática e domínio) ainda não foi
+escolhido. Nenhuma configuração de deploy é registrada até essa decisão.
 
-Healthcheck: `/healthz`.
-
-Build: `cargo-leptos`; assets em `target/site`.
+Sem backend, sem runtime de servidor e sem healthcheck: a página não tem servidor próprio.
 
 ## Users
 
@@ -49,10 +49,13 @@ A operação não inclui, nesta fase, dashboard autenticado, banco de dados, env
 - A seção “Painel de Métricas Operacionais” será uma demonstração ilustrativa, com dados sintéticos e rótulo visível.
 - Não fabricar depoimentos, métricas de ROI, clientes, logos, prêmios, endereço, horário ou resultados.
 - Sem backend de lead/formulário nesta fase.
-- Sem autenticação, banco de dados, volume Railway ou storage persistente.
-- SSR + hidratação Leptos/Axum; conteúdo principal deve existir no HTML inicial.
-- Deploy em Railway via Dockerfile; serviço stateless e escalável horizontalmente.
-- Deploy target não inclui custom domain ou DNS nesta definição.
+- Sem autenticação, banco de dados, volume, storage persistente ou runtime de servidor.
+- O formulário de contato monta a mensagem e abre o WhatsApp; um eventual endpoint de captura
+  futuro troca o manipulador de `submit`, não o desenho da página.
+- Todo o conteúdo comercial deve existir no HTML inicial, sem depender de JavaScript para ser lido.
+- Sem etapa de build e sem dependências de runtime: a página é servida como está.
+- Deploy target (hospedagem estática) e custom domain/DNS: ambos em decisão.
+- Nicho-alvo e sistemas legados tipicamente integrados: deliberadamente em aberto — são as perguntas deixadas sem resposta no final de `copy.md`. Não nichar a oferta sem decisão registrada do usuário.
 
 ## Brand Commitments
 
@@ -69,8 +72,9 @@ Marca e oferta se apoiam em credibilidade técnica, responsabilidade comercial e
 - `copy.md` — conteúdo comercial confirmado, fornecido pelo usuário.
 - Número de contato confirmado: WhatsApp `+55 15 99818-2559`.
 - Não há cases públicos, métricas de clientes, depoimentos, logos, certificações ou resultados verificados disponíveis no repositório.
-- O site anterior e seus assets estão deletados no working tree; o histórico Git pode ser inspecionado como evidência, mas não é autoridade visual.
-- `Dockerfile` será configurado para Railway; Railway fornece `PORT` e public domain.
+- O site anterior e seus assets (Rust/Leptos, `Dockerfile`, `Cargo.toml`) foram removidos do working tree por decisão do usuário; o histórico Git pode ser inspecionado como evidência, mas não é autoridade visual.
+- A fase anterior foi encerrada: a landing entregue nesta rodada é HTML/CSS/JS estático.
+- Estado do working tree em 2026-11-12: a fase anterior (Rust/Leptos + `Dockerfile`) estava de fato presente e idêntica ao HEAD (`040ee23`), apesar de o init registrar o contrário. O usuário confirmou a remoção como decisão nesta rodada; o histórico Git preserva o código anterior.
 
 ## Product Principles
 
@@ -78,7 +82,7 @@ Marca e oferta se apoiam em credibilidade técnica, responsabilidade comercial e
 2. **Prova permitida, não inventada:** usar demonstração ilustrativa e o diagnóstico gratuito como evidência, sem fabricar resultados.
 3. **Do clique ao caixa:** manter a narrativa ligando site, processos, CRM/ERP, automação e métricas ao faturamento.
 4. **Execução enxuta:** poucos caminhos, poucos elementos, uma conversão principal.
-5. **Robustez sem espetáculo:** acessibilidade, SSR, performance e operação simples em primeiro lugar.
+5. **Robustez sem espetáculo:** acessibilidade, performance e operação simples em primeiro lugar.
 
 ## Accessibility & Inclusion
 

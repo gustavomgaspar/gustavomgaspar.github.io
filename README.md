@@ -1,69 +1,56 @@
-# Gaspar — Landing de Modernização Digital
+# Gaspar — Landing pages que transformam visita em conversa comercial
 
-Landing page SSR (Rust + Leptos + Axum) para a oferta de modernização digital
-do Gaspar, destinada a empresas consolidadas. Conteúdo comercial derivado de
-`copy.md`; nada de provas ou métricas inventadas.
+Landing page de geração de leads para o Gaspar: desenho, integração e automação de
+engenharia digital para empresas que já lideram no mercado físico.
+
+Conteúdo comercial em `copy.md` — fonte de verdade. Nada de provas ou métricas
+inventadas: o painel do hero é uma demonstração com dados sintéticos, rotulada como tal
+na própria interface.
 
 ## Stack
 
-- **Leptos 0.8 SSR + Axum** — todo o conteúdo real existe no HTML inicial;
-  a demo do painel de métricas interativa entra via hidratação.
-- **cargo-leptos 0.3.11** — coordena o build do binário nativo e do Wasm.
-- **CSS puro com tokens OKLCH** (`public/styles/app.css`), sem Tailwind.
-- **Deploy: Railway** via Dockerfile multi-stage.
+- **HTML, CSS e JavaScript estáticos** — sem build, sem dependências, sem backend.
+- `index.html` — página única, todo o conteúdo comercial já no HTML inicial.
+- `site.css` — sistema visual (tokens OKLCH, escala tipográfica modular, grade fluida).
+- `site.js` — demonstração do painel, validação do formulário e envio por WhatsApp.
 
 ## Desenvolvimento local
 
-```bash
-rustup target add wasm32-unknown-unknown          # uma única vez
-cargo leptos watch                                # http://127.0.0.1:3000
-```
+Qualquer servidor estático serve a página. Não há build nem `npm install`:
 
-Verificações:
-
-```bash
-cargo fmt --all
-cargo clippy --all-targets -- -D warnings
-cargo check --no-default-features --features hydrate --target wasm32-unknown-unknown
+```sh
+python3 -m http.server 8000
+# abrir http://localhost:8000
 ```
 
 ## Estrutura
 
-```text
-src/
-  app.rs            shell SSR + rotas
-  main.rs           servidor Axum (PORT, /healthz, arquivos estáticos)
-  lib.rs            hidratação do cliente
-  content.rs        constantes do conteúdo (link do WhatsApp)
-  components/       header, hero, gargalos, oferta, painel, objeções, CTA, footer
-public/styles/      app.css (tokens + layout responsivo)
+```
+index.html     página única
+site.css       sistema visual
+site.js        comportamento do painel e do formulário
+copy.md        copy comercial (fonte de verdade)
+DESIGN.md      sistema de design documentado
+favicon.svg    ícone
+robots.txt     diretivas para buscadores
+PRODUCT.md     contexto de produto (Impeccable)
 ```
 
-## Build e deploy (Railway)
+## Formulário de contato
 
-1. Faça push deste repositório para o GitHub.
-2. No Railway: **New Project → Deploy from GitHub repo**, selecione o repositório
-   e a branch. O Railway detecta o `Dockerfile` da raiz automaticamente.
-3. Na aba **Networking**, gere um **public domain** (ou conecte um domínio próprio).
-4. Em **Deploy**, confirme o healthcheck apontando para `/healthz`.
-5. A porta é automática: o servidor faz bind em `0.0.0.0:$PORT` (a variável
-   `PORT` é injetada pelo Railway). Não precisa configurar manualmente.
+Sem backend e sem servidor: o formulário monta a mensagem e abre o WhatsApp do Gaspar
+com o texto pronto. Nada é gravado em disco nem enviado a um endpoint. Se um backend de
+captura entrar no futuro, troca-se o manipulador de `submit` em `site.js` — o desenho da
+página não muda.
 
-Deploy manual via CLI, se preferir:
+## Deploy
 
-```bash
-railway up       # build + deploy usando o Dockerfile
-railway logs     # acompanhar o boot
-```
-
-## Healthcheck
-
-`GET /healthz` → `200 OK` com corpo `ok`. Requisição leve, sem lógica, usada
-pelo Railway (e pelo `HEALTHCHECK` do Dockerfile) para validar o boot.
+**Alvo de deploy em decisão.** A página é estática e serve em qualquer hospedagem de
+arquivos estáticos; a escolha do provedor e do domínio custom ainda não foi registrada.
 
 ## Limites assumidos
 
-- Sem backend de leads/formulários — conversão direto no WhatsApp.
-- Sem banco de dados, volume ou storage persistente (serviço stateless).
-- O painel de métricas é **demo ilustrativa com dados sintéticos**, rotulada
-  como tal na própria página (ver `PRODUCT.md`).
+- Sem backend, sem banco de dados, sem autenticação e sem persistência.
+- Sem etapa de build: o que está no repositório é o que vai ao ar.
+- Sem analytics instalado.
+- O painel de métricas é demonstração; dados reais exigiriam o sistema do cliente.
