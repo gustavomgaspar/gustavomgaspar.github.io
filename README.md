@@ -13,6 +13,7 @@ na própria interface.
 - `index.html` — página única, todo o conteúdo comercial já no HTML inicial.
 - `site.css` — sistema visual (tokens OKLCH, escala tipográfica modular, grade fluida).
 - `site.js` — demonstração do painel, validação do formulário e envio por WhatsApp.
+- `waves.js` — campo de linhas do hero (WebGL2, shader próprio, sem interação).
 
 ## Desenvolvimento local
 
@@ -29,12 +30,21 @@ python3 -m http.server 8000
 index.html     página única
 site.css       sistema visual
 site.js        comportamento do painel e do formulário
+waves.js       campo de linhas do hero (WebGL2, sem interação)
 copy.md        copy comercial (fonte de verdade)
 DESIGN.md      sistema de design documentado
 favicon.svg    ícone
 robots.txt     diretivas para buscadores
 PRODUCT.md     contexto de produto (Impeccable)
 ```
+
+## Fundo do hero
+
+O hero tem um campo de linhas onduladas gerado em tempo real, em WebGL2 puro — sem
+biblioteca, sem build, sem interação com o mouse. É decorativo: some sozinho em
+navegadores sem WebGL2, e sob `prefers-reduced-motion` desenha um único frame estático.
+
+Detalhes de custo e contraste em `DESIGN.md`.
 
 ## Formulário de contato
 

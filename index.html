@@ -27,67 +27,70 @@
 
 <main id="conteudo">
 
-  <section class="hero shell" aria-labelledby="hero-title">
-    <div class="hero__copy">
-      <h1 id="hero-title" class="display">Landing pages que transformam visita em conversa comercial.</h1>
-      <p class="lede">Eu desenho a página, integro ao seu atendimento e mostro, em painel, de onde vêm os contatos. Engenharia full-stack para empresas que já lideram no mercado físico e precisam deixar de ser invisíveis no digital.</p>
-      <div class="hero__actions">
-        <a class="ds-btn-primary" href="#contato">Quero minha landing page</a>
-        <a class="link-quiet" href="https://wa.me/5515998182559?text=Ol%C3%A1%2C%20Gaspar!%20Vim%20pelo%20site%20e%20quero%20falar%20sobre%20uma%20landing%20page." rel="noopener">Prefiro chamar no WhatsApp</a>
-      </div>
-    </div>
-
-    <aside class="panel" aria-labelledby="panel-title">
-      <div class="panel__head">
-        <h2 id="panel-title" class="panel__title">Painel de conversão</h2>
-        <p class="panel__badge">Demonstração · dados sintéticos</p>
+  <section class="hero" aria-labelledby="hero-title">
+    <canvas class="hero__waves" data-waves aria-hidden="true"></canvas>
+    <div class="hero__inner shell">
+      <div class="hero__copy">
+        <h1 id="hero-title" class="display">Landing pages que transformam visita em conversa comercial.</h1>
+        <p class="lede">Eu desenho a página, integro ao seu atendimento e mostro, em painel, de onde vêm os contatos. Engenharia full-stack para empresas que já lideram no mercado físico e precisam deixar de ser invisíveis no digital.</p>
+        <div class="hero__actions">
+          <a class="ds-btn-primary" href="#contato">Quero minha landing page</a>
+          <a class="link-quiet" href="https://wa.me/5515998182559?text=Ol%C3%A1%2C%20Gaspar!%20Vim%20pelo%20site%20e%20quero%20falar%20sobre%20uma%20landing%20page." rel="noopener">Prefiro chamar no WhatsApp</a>
+        </div>
       </div>
 
-      <div class="panel__chips" role="group" aria-label="Selecionar período">
-        <button type="button" class="ds-chip is-active" data-periodo="hoje" aria-pressed="true">Hoje</button>
-        <button type="button" class="ds-chip" data-periodo="7d" aria-pressed="false">Últimos 7 dias</button>
-        <button type="button" class="ds-chip" data-periodo="30d" aria-pressed="false">Últimos 30 dias</button>
-      </div>
+      <aside class="panel" aria-labelledby="panel-title">
+        <div class="panel__head">
+          <h2 id="panel-title" class="panel__title">Painel de conversão</h2>
+          <p class="panel__badge">Demonstração · dados sintéticos</p>
+        </div>
 
-      <ul class="ds-tiles" id="tiles">
-        <li class="ds-tile">
-          <span class="ds-tile__label">Leads captados</span>
-          <span class="ds-tile__value" data-tile="leads">42</span>
-          <span class="ds-tile__delta" data-tile="leads-delta">+8% vs. anterior</span>
-        </li>
-        <li class="ds-tile">
-          <span class="ds-tile__label">Contatos no WhatsApp</span>
-          <span class="ds-tile__value" data-tile="contatos">29</span>
-          <span class="ds-tile__delta" data-tile="contatos-delta">69% dos leads</span>
-        </li>
-        <li class="ds-tile">
-          <span class="ds-tile__label">Horas poupadas</span>
-          <span class="ds-tile__value" data-tile="horas">3h</span>
-          <span class="ds-tile__delta" data-tile="horas-delta">fluxo automático ativo</span>
-        </li>
-      </ul>
+        <div class="panel__chips" role="group" aria-label="Selecionar período">
+          <button type="button" class="ds-chip is-active" data-periodo="hoje" aria-pressed="true">Hoje</button>
+          <button type="button" class="ds-chip" data-periodo="7d" aria-pressed="false">Últimos 7 dias</button>
+          <button type="button" class="ds-chip" data-periodo="30d" aria-pressed="false">Últimos 30 dias</button>
+        </div>
 
-      <figure class="panel__chart">
-        <figcaption class="panel__chart-title" id="chart-title">Contatos recebidos por faixa do dia</figcaption>
-        <ul class="bars" id="bars" aria-labelledby="chart-title">
-          <li class="bar"><span class="bar__value">1</span><span class="bar__stem" style="--h:14%"></span><span class="bar__label">08h</span></li>
-          <li class="bar"><span class="bar__value">3</span><span class="bar__stem" style="--h:43%"></span><span class="bar__label">10h</span></li>
-          <li class="bar"><span class="bar__value">5</span><span class="bar__stem" style="--h:71%"></span><span class="bar__label">12h</span></li>
-          <li class="bar"><span class="bar__value">4</span><span class="bar__stem" style="--h:57%"></span><span class="bar__label">14h</span></li>
-          <li class="bar"><span class="bar__value">6</span><span class="bar__stem" style="--h:86%"></span><span class="bar__label">16h</span></li>
-          <li class="bar"><span class="bar__value">7</span><span class="bar__stem" style="--h:100%"></span><span class="bar__label">18h</span></li>
-          <li class="bar"><span class="bar__value">3</span><span class="bar__stem" style="--h:43%"></span><span class="bar__label">20h</span></li>
+        <ul class="ds-tiles" id="tiles">
+          <li class="ds-tile">
+            <span class="ds-tile__label">Leads captados</span>
+            <span class="ds-tile__value" data-tile="leads">42</span>
+            <span class="ds-tile__delta" data-tile="leads-delta">+8% vs. anterior</span>
+          </li>
+          <li class="ds-tile">
+            <span class="ds-tile__label">Contatos no WhatsApp</span>
+            <span class="ds-tile__value" data-tile="contatos">29</span>
+            <span class="ds-tile__delta" data-tile="contatos-delta">69% dos leads</span>
+          </li>
+          <li class="ds-tile">
+            <span class="ds-tile__label">Horas poupadas</span>
+            <span class="ds-tile__value" data-tile="horas">3h</span>
+            <span class="ds-tile__delta" data-tile="horas-delta">fluxo automático ativo</span>
+          </li>
         </ul>
-      </figure>
 
-      <p class="panel__note">Valores de demonstração. O painel real é montado com os dados da sua operação.</p>
-    </aside>
+        <figure class="panel__chart">
+          <figcaption class="panel__chart-title" id="chart-title">Contatos recebidos por faixa do dia</figcaption>
+          <ul class="bars" id="bars" aria-labelledby="chart-title">
+            <li class="bar"><span class="bar__value">1</span><span class="bar__stem" style="--h:14%"></span><span class="bar__label">08h</span></li>
+            <li class="bar"><span class="bar__value">3</span><span class="bar__stem" style="--h:43%"></span><span class="bar__label">10h</span></li>
+            <li class="bar"><span class="bar__value">5</span><span class="bar__stem" style="--h:71%"></span><span class="bar__label">12h</span></li>
+            <li class="bar"><span class="bar__value">4</span><span class="bar__stem" style="--h:57%"></span><span class="bar__label">14h</span></li>
+            <li class="bar"><span class="bar__value">6</span><span class="bar__stem" style="--h:86%"></span><span class="bar__label">16h</span></li>
+            <li class="bar"><span class="bar__value">7</span><span class="bar__stem" style="--h:100%"></span><span class="bar__label">18h</span></li>
+            <li class="bar"><span class="bar__value">3</span><span class="bar__stem" style="--h:43%"></span><span class="bar__label">20h</span></li>
+          </ul>
+        </figure>
 
-    <ul class="hero__facts">
-      <li>Diagnóstico gratuito de 20 minutos</li>
-      <li>Um interlocutor do desenho à publicação</li>
-      <li>Prioridade decidida por retorno, não por moda</li>
-    </ul>
+        <p class="panel__note">Valores de demonstração. O painel real é montado com os dados da sua operação.</p>
+      </aside>
+
+      <ul class="hero__facts">
+        <li>Diagnóstico gratuito de 20 minutos</li>
+        <li>Um interlocutor do desenho à publicação</li>
+        <li>Prioridade decidida por retorno, não por moda</li>
+      </ul>
+    </div>
   </section>
 
   <section class="section shell" id="problema" aria-labelledby="problema-title">
@@ -272,5 +275,6 @@
 </footer>
 
 <script src="site.js" defer></script>
+<script src="waves.js" defer></script>
 </body>
 </html>

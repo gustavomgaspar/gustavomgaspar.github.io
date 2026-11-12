@@ -54,6 +54,8 @@ A operação não inclui, nesta fase, dashboard autenticado, banco de dados, env
   futuro troca o manipulador de `submit`, não o desenho da página.
 - Todo o conteúdo comercial deve existir no HTML inicial, sem depender de JavaScript para ser lido.
 - Sem etapa de build e sem dependências de runtime: a página é servida como está.
+- O campo de linhas do hero não pode virar dependência: se o WebGL2 faltar, a página
+  continua idêntica sem ele. Nenhuma informação pode depender do canvas.
 - Deploy target (hospedagem estática) e custom domain/DNS: ambos em decisão.
 - Nicho-alvo e sistemas legados tipicamente integrados: deliberadamente em aberto — são as perguntas deixadas sem resposta no final de `copy.md`. Não nichar a oferta sem decisão registrada do usuário.
 
@@ -66,6 +68,12 @@ Tom: direto, executivo e comercial, sem hype vazio; fala para decisores de empre
 Idioma: português do Brasil.
 
 Marca e oferta se apoiam em credibilidade técnica, responsabilidade comercial e clareza de ROI. O site não deve prometer crescimento garantido nem usar provas inventadas.
+
+O hero carrega um único elemento gráfico: um campo de linhas onduladas gerado em
+tempo real, com movimento lento e sem interação com o mouse. Ele é decorativo — não
+interage, não aparece na árvore de acessibilidade e some por completo onde não há
+WebGL2. O texto do hero mantém contraste WCAG AA sobre ele. É a exceção única à
+regra de zero fotos e zero logos: não há mais nenhum elemento gráfico na página.
 
 ## Evidence on Hand
 

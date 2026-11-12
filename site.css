@@ -220,6 +220,14 @@ p { margin: 0 0 1rem; max-width: 68ch; }
 /* ---------- Hero ---------- */
 
 .hero {
+  position: relative;
+  padding-top: clamp(2.75rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 7vw, 5.5rem);
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   grid-template-areas:
@@ -228,8 +236,17 @@ p { margin: 0 0 1rem; max-width: 68ch; }
   grid-template-rows: auto auto;
   column-gap: clamp(2rem, 4vw, 3.5rem);
   align-items: start;
-  padding-top: clamp(2.75rem, 6vw, 5rem);
-  padding-bottom: clamp(3rem, 7vw, 5.5rem);
+}
+
+/* Campo de linhas: camada decorativa atrás do conteúdo do hero.
+   O canvas nunca captura ponteiro — não há interação com o mouse. */
+.hero__waves {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 .hero__copy { grid-area: copy; }
@@ -777,7 +794,7 @@ p { margin: 0 0 1rem; max-width: 68ch; }
 /* ---------- Responsivo ---------- */
 
 @media (max-width: 900px) {
-  .hero {
+  .hero__inner {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
       "copy"
@@ -799,7 +816,8 @@ p { margin: 0 0 1rem; max-width: 68ch; }
 @media (max-width: 560px) {
   :root { --header-h: 3.9rem; }
   /* Ritmo fechado para o primeiro tile do painel caber sem scroll em 390×844. */
-  .hero { padding-top: 1.15rem; row-gap: 1.05rem; }
+  .hero { padding-top: 1.15rem; }
+  .hero__inner { row-gap: 1.05rem; }
   .display { font-size: clamp(1.95rem, 8.4vw, 2.35rem); }
   .lede { font-size: 1rem; line-height: 1.5; margin-bottom: 1.25rem; }
   .panel__chips { padding-top: 0.6rem; padding-bottom: 0.6rem; }

@@ -16,6 +16,34 @@ filete de 1px, listas separadas por régua, números em mono tabular.
 **Zero fotos. Zero logos. Zero dependências.** A página sobrevive com texto, dado e
 arquitetura de página.
 
+## O campo de linhas do hero
+
+O hero carrega uma única camada gráfica gerada em tempo real: um campo de linhas onduladas
+que deriva devagar, como a hachura de um desenho técnico. Ele é **decorativo** — não
+interage com o mouse, não entra na árvore de acessibilidade e some por completo se o
+navegador não tiver WebGL2.
+
+- **Shader próprio em WebGL2**, em `waves.js`. Sem biblioteca, sem `import`, sem build.
+  O campo é desenhado em tinta escura (matiz derivada das três cores do campo) sobre o
+  papel, nunca como fundo colorido — por isso o texto do hero mantém o mesmo contraste.
+- **Sem interação.** O canvas tem `pointer-events: none` e `aria-hidden="true"`. Não há
+  uniforms de mouse nem de ripple no shader: o código que os alimentaria não existe.
+- **Opacidade baixa de propósito** (`0.045`): o campo é textura de fundo, não elemento
+  gráfico. O pior pixel do campo é `rgb(209 214 222)`, o que mantém o headline em
+  **11.8:1** e o lede em **5.8:1** sobre ele — ambos acima de WCAG AA.
+- **Passo fixo de ~24fps** (`frameInterval: 42ms`). O movimento é lento por definição;
+  redesenhar a 60fps não compra nada visível e satura a CPU.
+- **Custo limitado por pixels** (`PIXEL_BUDGET: 1.1e6`, `MAX_RATIO: 1`). É uma textura
+  de fundo: não precisa de resolução nativa.
+- **Pausa fora da tela** (`IntersectionObserver`) e com a aba em segundo plano
+  (`visibilitychange`). A GPU não queima bateria à toa.
+- **Movimento reduzido**: um único frame estático, e para.
+- **Sem WebGL2**: o canvas é removido e o hero fica como papel liso. Nada da página
+  depende dele.
+
+O campo é full-bleed: `.hero` é a camada, `.hero__inner` carrega o conteúdo com
+`z-index: 1` por cima.
+
 ## Cor
 
 Todos os valores em OKLCH. Nenhuma cor fora desta lista.
@@ -135,6 +163,9 @@ As entradas do painel (`translateY(12px)` → 0, opacidade 0 → 1) rodam só so
 `@media (prefers-reduced-motion: no-preference)`. Sob `reduce`, tudo aparece sem
 transformação. O `scroll-behavior: smooth` também está sob a mesma guarda.
 
+O campo de linhas do hero segue a mesma regra: sob `reduce`, desenha um frame único e
+para — nenhuma animação contínua.
+
 ## Acessibilidade
 
 - WCAG 2.2 AA é a meta interna.
@@ -150,3 +181,4 @@ transformação. O `scroll-behavior: smooth` também está sob a mesma guarda.
 4. Uma ação comercial principal por bloco.
 5. O painel preto é o único objeto escuro — não replicar o efeito.
 6. Sombra em dois níveis, sempre.
+7. O campo de linhas é o único elemento gráfico da página. Não somar outros.
