@@ -1,6 +1,0 @@
-*.log
-.DS_Store
-.env
-
-# Ferramentas do agente (29 MB de skills, não versionadas)
-.agents/
