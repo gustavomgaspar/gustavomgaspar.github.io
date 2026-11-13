@@ -191,11 +191,23 @@ p { margin: 0 0 1rem; max-width: 68ch; }
 }
 
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 800;
   font-size: 1.16rem;
   letter-spacing: -0.02em;
   color: var(--ink);
   text-decoration: none;
+}
+
+/* Logo da marca. O SVG é carregado como <img>, então é um documento
+   separado: nem currentColor nem variáveis CSS atravessam essa fronteira.
+   A cor está fixada no arquivo (#151B25 = tinta, #F6F7FA = papel). */
+.wordmark__logo {
+  display: block;
+  width: 1.5rem;
+  height: auto;
 }
 
 .site-nav {
@@ -744,6 +756,9 @@ p { margin: 0 0 1rem; max-width: 68ch; }
   gap: 0.6rem;
 }
 .site-footer__mark {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   margin: 0;
   font-weight: 800;
   letter-spacing: -0.02em;

@@ -69,11 +69,14 @@ Idioma: português do Brasil.
 
 Marca e oferta se apoiam em credibilidade técnica, responsabilidade comercial e clareza de ROI. O site não deve prometer crescimento garantido nem usar provas inventadas.
 
-O hero carrega um único elemento gráfico: um campo de linhas onduladas gerado em
+O hero carrega um único elemento gráfico decorativo: um campo de linhas onduladas gerado em
 tempo real, com movimento lento e sem interação com o mouse. Ele é decorativo — não
 interage, não aparece na árvore de acessibilidade e some por completo onde não há
-WebGL2. O texto do hero mantém contraste WCAG AA sobre ele. É a exceção única à
-regra de zero fotos e zero logos: não há mais nenhum elemento gráfico na página.
+WebGL2. O texto do hero mantém contraste WCAG AA sobre ele.
+
+A única imagem da página é a logo da marca (o mascote do Gaspar), usada como lockup no
+header e no rodapé e como favicon. É a assinatura da marca, não decoração — a regra é
+zero ilustrações, não zero marca.
 
 ## Evidence on Hand
 

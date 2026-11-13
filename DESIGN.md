@@ -13,8 +13,31 @@ acento índigo forte indica ação; um único momento preto — o painel de mét
 como objeto de evidência sobre a mesa. A densidade é de relatório executivo: cartões com
 filete de 1px, listas separadas por régua, números em mono tabular.
 
-**Zero fotos. Zero logos. Zero dependências.** A página sobrevive com texto, dado e
-arquitetura de página.
+**Zero fotos. Zero ilustrações. Zero dependências.** A página sobrevive com texto, dado e
+arquitetura de página. A única imagem é a logo da marca — a assinatura, não decoração.
+
+## A logo da marca
+
+O mascote do Gaspar (o fantasma) é a assinatura da marca. Ele aparece em três lugares e em
+nenhum outro:
+
+- **Header e rodapé**, como lockup ao lado da palavra "Gaspar". A palavra carrega o nome; a
+  mascot carrega a assinatura. Não substituem uma à outra.
+- **Favicon**, em `favicon.svg` — a mesma arte sobre um quadrado arredondado na cor da tinta.
+
+**Cores:** corpo `#151B25` (a tinta do sistema), olhos `#F6F7FA` (o papel). Ficam fixas no
+arquivo porque um SVG carregado como `<img>` é um documento separado: nem `currentColor` nem
+variáveis CSS atravessam essa fronteira.
+
+**Contraste medido:** 15.76:1 sobre o papel do header e 14.61:1 sobre o `--paper-alt` do
+rodapé. Ambos muito acima de AA.
+
+**Tamanho:** 24×18px no header e no rodapé. Abaixo de 16px os olhos somem — por isso o
+favicon tem fundo próprio, e não é a mesma arte solta.
+
+O `gaspar.svg` é o arquivo de marca e o `favicon.svg` é a variante para aba de navegador.
+O `apple-touch-icon.png` (180×180, opaco) é a mesma arte em raster, porque o iOS não aceita
+SVG no ícone da tela inicial.
 
 ## O campo de linhas do hero
 
@@ -176,9 +199,9 @@ para — nenhuma animação contínua.
 ## Regras de uso
 
 1. Nenhuma cor nova fora dos tokens. Se falta uma cor, o problema é o design, não a paleta.
-2. Nenhuma foto, logo ou ilustração na landing.
+2. Nenhuma foto ou ilustração na landing. A única imagem é a logo da marca.
 3. Mono para número, sans para texto corrido.
 4. Uma ação comercial principal por bloco.
 5. O painel preto é o único objeto escuro — não replicar o efeito.
 6. Sombra em dois níveis, sempre.
-7. O campo de linhas é o único elemento gráfico da página. Não somar outros.
+7. O campo de linhas é o único elemento gráfico decorativo da página. Não somar outros.

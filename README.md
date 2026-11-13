@@ -31,9 +31,11 @@ index.html     página única
 site.css       sistema visual
 site.js        comportamento do painel e do formulário
 waves.js       campo de linhas do hero (WebGL2, sem interação)
+gaspar.svg     logo da marca (mascote)
+favicon.svg    ícone da aba (a logo sobre fundo)
+apple-touch-icon.png   ícone para iOS (PNG, 180×180)
 copy.md        copy comercial (fonte de verdade)
 DESIGN.md      sistema de design documentado
-favicon.svg    ícone
 robots.txt     diretivas para buscadores
 PRODUCT.md     contexto de produto (Impeccable)
 ```
