@@ -28,15 +28,19 @@ python3 -m http.server 8000
 
 ```
 index.html     página única
+404.html       página de erro, no visual da marca
 site.css       sistema visual
 site.js        comportamento do painel e do formulário
 waves.js       campo de linhas do hero (WebGL2, sem interação)
 gaspar.svg     logo da marca (mascote)
 favicon.svg    ícone da aba (a logo sobre fundo)
 apple-touch-icon.png   ícone para iOS (PNG, 180×180)
+og.png         imagem de prévia para compartilhamento (1200×630)
 copy.md        copy comercial (fonte de verdade)
 DESIGN.md      sistema de design documentado
 robots.txt     diretivas para buscadores
+sitemap.xml    mapa do site
+.nojekyll      desliga o Jekyll no GitHub Pages
 PRODUCT.md     contexto de produto (Impeccable)
 ```
 
@@ -57,8 +61,27 @@ página não muda.
 
 ## Deploy
 
-**Alvo de deploy em decisão.** A página é estática e serve em qualquer hospedagem de
-arquivos estáticos; a escolha do provedor e do domínio custom ainda não foi registrada.
+**GitHub Pages**, servido na raiz do domínio: <https://gustavomgaspar.github.io/>
+
+A página é publicada no repositório de site de usuário `gustavomgaspar.github.io`: a branch
+`main` recebe o conteúdo deste repositório por force-push, e o Pages reconstrói sozinho a
+cada push. O arquivo `.nojekyll` impede que o GitHub rode Jekyll sobre o conteúdo estático.
+
+O site anterior que ocupava esse repositório ("GMG Web", Jekyll, de 2022) foi preservado no
+branch `legacy/gmg-web` do repositório de site de usuário.
+
+### Republicar
+
+```sh
+git push github-pages main:main
+```
+
+O Pages reconstrói em ~1 minuto e serve na raiz do domínio. Nada mais é preciso.
+
+### Domínio próprio
+
+Ainda em decisão. Quando houver, basta criar o arquivo `CNAME` no repositório de site de
+usuário com o domínio e apontar o DNS — o restante do setup não muda.
 
 ## Limites assumidos
 

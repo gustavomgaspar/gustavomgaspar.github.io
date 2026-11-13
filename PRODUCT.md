@@ -13,8 +13,12 @@ HTML, CSS e JavaScript estáticos, sem build e sem dependências. Escolhidos pel
 Sem etapa de build: `index.html`, `site.css` e `site.js` são servidos como estão. Todo o
 conteúdo comercial já existe no HTML inicial.
 
-Deploy: **decisão em aberto** — o alvo de deploy (hospedagem estática e domínio) ainda não foi
-escolhido. Nenhuma configuração de deploy é registrada até essa decisão.
+Deploy: **GitHub Pages**, no repositório de site de usuário `gustavomgaspar.github.io`, servido
+na raiz do domínio em `https://gustavomgaspar.github.io/`.
+
+Publicação: a branch `main` do repositório de site de usuário recebe o conteúdo do repositório
+de trabalho por force-push, e o Pages reconstrói sozinho a cada push. O `.nojekyll` impede
+que o GitHub rode Jekyll sobre o conteúdo estático.
 
 Sem backend, sem runtime de servidor e sem healthcheck: a página não tem servidor próprio.
 
@@ -56,7 +60,9 @@ A operação não inclui, nesta fase, dashboard autenticado, banco de dados, env
 - Sem etapa de build e sem dependências de runtime: a página é servida como está.
 - O campo de linhas do hero não pode virar dependência: se o WebGL2 faltar, a página
   continua idêntica sem ele. Nenhuma informação pode depender do canvas.
-- Deploy target (hospedagem estática) e custom domain/DNS: ambos em decisão.
+- Deploy target decidido: GitHub Pages na raiz do domínio (`https://gustavomgaspar.github.io/`).
+- Custom domain/DNS: continua em decisão. Quando houver, basta criar o `CNAME` no repositório
+  de site de usuário e apontar o DNS — o restante do setup não muda.
 - Nicho-alvo e sistemas legados tipicamente integrados: deliberadamente em aberto — são as perguntas deixadas sem resposta no final de `copy.md`. Não nichar a oferta sem decisão registrada do usuário.
 
 ## Brand Commitments

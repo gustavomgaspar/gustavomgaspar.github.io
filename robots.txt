@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://gustavomgaspar.github.io/sitemap.xml
